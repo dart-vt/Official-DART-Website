@@ -56,42 +56,44 @@
     align-items: center;
   }
 
+  /* MOBILE NAV MENU — updated: left-anchored, full-width, matches header theme */
   /* when mobile menu is toggled open */
   #navPanel.open {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: calc(100% + 8px);
-    right: 1rem;
-    /*background: transparent; /* no colored background */
-    padding: 0; /* let links define spacing */
-    border-radius: 0;
-    box-shadow: none;
-    width: auto;
+    top: 100%;
+    left: 0;           /* FIX: was right:1rem — now anchors to left side */
+    height: auto;      /* FIX: overrides inherited height:100% so bg covers all items */
+    background: var(--overlay); /* FIX: matches header background color per theme */
+    padding: 0.5rem 0;
+    border-radius: 0 0 6px 6px; /* FIX: rounds only bottom corners, extends header look */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* FIX: depth shadow below menu */
+    width: 100%;       /* FIX: was auto — full-width dropdown */
     z-index: 10002;
   }
 
   #navPanel.open li {
     height: auto;
-    margin: 0.2rem 0;
+    margin: 0;
   }
 
   /* make links inherit the page text color and simple spacing */
   #navPanel.open li a {
     display: block;
-    padding: 0.45rem 0.75rem;
+    padding: 0.75rem 1.25rem; /* FIX: larger tap targets */
     color: var(--txt);
     text-decoration: none;
-    border-radius: 0;
-    transition: background 0.12s ease, color 0.12s ease;
+    font-family: monospace; /* FIX: matches desktop nav link font */
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* FIX: white divider works on colored bg */
+    transition: background 0.15s ease, color 0.15s ease;
     text-align: left;
-    /* --- Mobile nav: divider for presentation --- */
-    border-bottom: 1px solid rgba(10,10,10,10); /* barely visible */
   }
 
   #navPanel.open li a:hover,
   #navPanel.open li a:focus {
-    background: rgba(0,0,0,0.04);
+    background: rgba(0, 0, 0, 0.2); /* FIX: visible darkening on colored background */
     color: var(--txt);
     outline: none;
   }
