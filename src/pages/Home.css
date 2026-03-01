@@ -267,6 +267,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--txt, #333);
+  /* Prevents horizontal scroll on the main page */
+  overflow-x: hidden;
 }
 
 #header h1, .hero-title {
