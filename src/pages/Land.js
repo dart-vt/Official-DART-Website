@@ -115,21 +115,21 @@ export function Land() {
       </section>
 
       <section className="projects section-colored">
-        <h2>Robots</h2>
+        <h2>Our Robots</h2>
         <div className="project-grid">
-          <div className="project-card">
+         {/* <div className="project-card">
             <img src={pub("images/stormsurge.png")} alt="Storm Surge" />
             <h3>Storm Surge</h3>
-          </div>
+          </div>*/}
           <div className="project-card">
-            <img src={pub("images/pinhead.png")} alt="Pinhead Larry" />
-            <h3>Pinhead Larry</h3>
+            <img src={pub("images/Robotshowcase.png")} alt="Pinhead Larry" />
+            <h3></h3>
             <Link to="/robots" className="about-btn">View Full Robot Page</Link>
           </div>
-          <div className="project-card">
+         {/* <div className="project-card">
             <img src={pub("images/eggbeater.png")} alt="Eggbeater" />
             <h3>Eggbeater</h3>
-          </div>
+          </div>*/}
         </div>
       </section>
 
