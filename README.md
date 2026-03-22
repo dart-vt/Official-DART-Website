@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the official website for **DART Robotics** (Destructive Arena Robotics Team), Virginia Tech's premier combat robotics team. Founded in 2022, DART specializes in designing, building, and competing with destructive robots in events like RoboGames, AutoNav, and VEX-style arena matches.
+This is the official website for **DART Robotics** (Destructive Arena Robotics Team), Virginia Tech's premier combat robotics team. Founded in 2022, DART specializes in designing, building, and competing with destructive robots.
 
 The website serves as the primary online presence for the team, showcasing our robots, team members, sponsors, and providing information for prospective members and supporters.
 
