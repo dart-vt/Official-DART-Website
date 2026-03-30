@@ -1,5 +1,33 @@
 # Official DART Website
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Website Structure](#website-structure)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started (For Developers)](#getting-started-for-developers)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Build for Production](#build-for-production)
+- [Deployment](#deployment)
+- [Updating Content (For Club Members)](#updating-content-for-club-members)
+- [Important Notes for Non-Technical Updates](#important-notes-for-non-technical-updates)
+- [Common Updates](#common-updates)
+- [Adding a New Team Member](#adding-a-new-team-member)
+- [Updating Robot Information](#updating-robot-information)
+- [Adding a Sponsor](#adding-a-sponsor)
+- [Updating About Content](#updating-about-content)
+- [Changing Theme Colors](#changing-theme-colors)
+- [Adding New Pages](#adding-new-pages)
+- [Media and Assets](#media-and-assets)
+- [Contact Information Updates](#contact-information-updates)
+- [Social Media Links](#social-media-links)
+- [File Structure](#file-structure)
+- [Contributing](#contributing)
+- [Support](#support)
+- [License](#license)
+
 ## Overview
 
 This is the official website for **DART Robotics** (Destructive Arena Robotics Team), Virginia Tech's premier combat robotics team. Founded in 2022, DART specializes in designing, building, and competing with destructive robots.
