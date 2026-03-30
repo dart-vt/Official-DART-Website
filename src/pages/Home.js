@@ -51,7 +51,7 @@ function Header({ currentTheme, toggleTheme }) {
       </button>
 
       <Link to="/" id="logo_container">
-        <img src={pub('images/DART.svg')} id="logo" alt="logo" />
+        <img src={pub(currentTheme === 'light' ? 'images/DART-white.svg' : 'images/DART.svg')} id="logo" alt="logo" />
       </Link>
 
       <nav id="navPanel" className={menuOpen ? 'open' : ''}>

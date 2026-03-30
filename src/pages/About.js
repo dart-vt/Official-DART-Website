@@ -12,37 +12,20 @@ export function About() {
       <h1 className="about-title">About DART Robotics</h1>
 
       <p className="about-text">
-        DART Robotics is Virginia Tech's premier combat robotics team. Since its
-        founding in 2022, the team has specialized in designing, building,
-        and competing with destructive robots in events like RoboGames, AutoNav,
-        and VEX-style arena matches. DART brings together students across
-        disciplines—mechanical, electrical, software engineering, and beyond—to
-        collaborate on cutting-edge engineering challenges.
+        DART is a Virginia Tech design team built around combat robotics. We focus on
+        iterative design, rapid prototyping, and getting robots competition-ready on a
+        6-week build cycle. Each cycle ends with real data we use to improve the next one.
       </p>
 
       <p className="about-text">
-        Our mission is to innovate through destruction. From vertical spinners to
-        flippers and autonomous bots, our builds represent creativity,
-        resilience, and technical excellence. DART fosters a learning-first
-        culture where students of all backgrounds and experience levels are
-        welcome to contribute, grow, and compete on a national level.
+        We compete at various weight classes in robot fighting competitions held each
+        Fall and Spring semester. Competitions are how we test our designs, find what
+        breaks, and figure out what to do differently next time.
       </p>
 
       <p className="about-text">
-        Beyond competition, DART Robotics is a hub for mentorship, hands‑on
-        learning, and personal growth. Members gain experience in CAD design,
-        embedded systems, autonomous navigation, project management, and
-        outreach. We believe in empowering future engineers by giving them the
-        space and resources to build something real—something that hits hard and
-        performs under pressure.
-      </p>
-
-      <p className="about-text">
-        Whether you're interested in electronics, machining, programming, or
-        event coordination, DART offers a place for you. We're not just a
-        robotics team—we're a community of innovators, problem-solvers, and
-        battle-hardened builders making an impact through every project and every
-        hit in the arena.
+        The team draws from all engineering backgrounds. If you want hands-on experience
+        actually building and breaking things, DART is a good fit.
       </p>
 
       {/* Image back at the bottom */}
