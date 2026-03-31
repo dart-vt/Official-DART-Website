@@ -5,55 +5,55 @@ import { Link } from "react-router-dom";
 const pub = (p) => `${process.env.PUBLIC_URL}/${p.replace(/^\/+/, '')}`;
 
 const robotList = [
-  {
+  /*{
     name: "Storm Surge",
     type: "Spinner Bot",
     image: "/images/stormsurge.png",
     description: "High-speed spinner designed for aggressive takedowns combat.",
     link: "/robots/storm-surge"
-  },
+  },*/
   {
     name: "Pinhead Larry",
-    type: "Flipper Bot",
-    image: "/images/pinhead.png",
-    description: "Robust flipper robot engineered for precision control and endurance battles.",
+    type: "Weapon type: Spinner",
+    image: "/images/pickl.png",
+    description: "Robust spinner robot engineered for precision control and endurance battles.",
     link: "/robots/pinhead-larry"
   },
-  {
+  /*{
     name: "Eggbeater",
     type: "Vertical Spinner",
     image: "/images/eggbeater.png",
     description: "Compact yet powerful vertical spinner ideal for maneuverability and knockout hits.",
     link: "/robots/eggbeater"
-  },
+  },*/
   {
   name: "Be Careful",
-  type: "Saw",
-  image: "/images/Becareful.png",
+  type: "Weapon type: Saw",
+  image: "/images/saww.png",
   description: "Overhead saw bot with a vertical cutting blade built for precise top-down attacks.",
 },
 {
   name: "Refuse",
-  type: "Launcher",
-  image: "/images/Refuse.png",
-  description: "Low-profile circular launcher designed for quick flips and agile movement.",
+  type: "Weapon type: Spinner",
+  image: "/images/Q70A1644.png",
+  description: "Low-profile circular spinner designed for quick flips and agile movement.",
 },
 {
   name: "Goaline",
-  type: "Spinner",
-  image: "/images/Goaline.png",
+  type: "Weapon type: Spinner",
+  image: "/images/goal.png",
   description: "Triangular wedge spinner built for strong frontal impacts and durability.",
 },
 {
   name: "Pickle Jar",
-  type: "Tornado",
-  image: "/images/Picklejar.png",
+  type: "Weapon type: Spikes",
+  image: "/images/Q70A1683.png",
   description: "Compact drum-style spinner with a heavy rotating shell for wide strikes.",
 },
 {
   name: "CyclicalSubversion",
-  type: "Excavator",
-  image: "/images/CyclicalSubversion.png",
+  type: "Weapon type: Ramp",
+  image: "/images/PXL_20251004_170732141.PORTRAIT (1).png",
   description: "Ramp designed for controlled lifting, pushing, and disruption.",
 }
 ];
