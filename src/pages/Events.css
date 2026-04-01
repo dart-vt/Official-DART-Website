@@ -1,0 +1,116 @@
+.events-page {
+  padding: 2rem;
+  background-color: var(--bg);
+  color: var(--txt);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.events-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--txt);
+}
+
+.events-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.event-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 320px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.event-card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.75rem;
+}
+
+.event-name {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--txt);
+  margin: 0 0 0.4rem;
+}
+
+.event-date {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #aaa;
+}
+
+.event-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.event-location,
+.event-address,
+.event-details {
+  font-size: 0.9rem;
+  color: var(--txt);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.event-label {
+  font-weight: 600;
+}
+
+.event-card-footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-cta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.event-card:hover .event-cta {
+  color: var(--txt);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.event-card {
+  animation: popIn 0.6s ease-out forwards;
+}

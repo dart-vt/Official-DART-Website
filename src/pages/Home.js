@@ -9,6 +9,7 @@ import './Home.css';
 import themes from './themes.json';
 import { Team } from './Team';
 import { Robots } from './Robots';
+import { Events } from './Events';
 const pub = (p) => `${process.env.PUBLIC_URL}/${p.replace(/^\/+/, '')}`;
 
 function setTheme(themestr) {
@@ -126,6 +127,7 @@ function Home() {
           <Route index element={<Land currentTheme={currentTheme} />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/robots" element={<Robots />} />
           <Route path="/sponsors" element={<Sponsors />} />
         </Routes>
