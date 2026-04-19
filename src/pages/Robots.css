@@ -69,6 +69,7 @@
 .robot-info p {
   font-size: 0.9rem;
   color: var(--txt); /* Theme toggle controlled */
+  margin-bottom: 0;
 }
 /* — Robot Cards Typography — */
 .robot-card h3 {

@@ -71,7 +71,6 @@ export function Robots() {
             <div className="robot-info">
               <h3>{robot.name}</h3>
               <p><em>{robot.type}</em></p>
-              <p>{robot.description}</p>
             </div>
           </div>
         ))}
