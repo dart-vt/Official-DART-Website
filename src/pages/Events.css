@@ -1,116 +1,275 @@
+/* ── Page ── */
 .events-page {
-  padding: 2rem;
+  padding: 3rem 1.5rem;
   background-color: var(--bg);
   color: var(--txt);
-  text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
 }
 
 .events-title {
+  font-family: 'Roboto Slab', serif;
   font-size: 2.5rem;
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
   color: var(--txt);
 }
 
 .events-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.event-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.event-card {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  padding: 1.5rem;
-  width: 320px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: left;
-  display: flex;
   flex-direction: column;
-  gap: 1rem;
-  cursor: pointer;
+  align-items: center;
+  gap: 3rem;
 }
 
-.event-card:hover {
-  transform: translateY(-6px) rotate(-1deg);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.event-image {
+/* ── Card shell ── */
+.event-card-wide {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  margin-bottom: 1rem;
+  max-width: 860px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.18);
+  background: var(--bg);
+  border: 1px solid rgba(128, 128, 128, 0.15);
+  animation: fadeUp 0.5s ease-out forwards;
 }
 
-.event-card-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.75rem;
+/* ── Hero banner ── */
+.event-hero {
+  background: linear-gradient(135deg, #8b0000 0%, #cc0000 100%);
+  padding: 2.25rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.event-name {
+.event-hero-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.event-hero-text {
+  flex: 1;
+}
+
+.event-hero-name {
   font-family: 'Roboto Slab', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--txt);
-  margin: 0 0 0.4rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.3rem;
+  line-height: 1.2;
 }
 
-.event-date {
-  font-size: 0.95rem;
+.event-hero-date {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.82);
   font-style: italic;
-  color: #aaa;
 }
 
-.event-card-body {
+.event-register-btn {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background: #fff;
+  color: #cc0000;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.event-register-btn:hover {
+  opacity: 0.85;
+}
+
+/* ── Info chips strip ── */
+.event-info-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  background: rgba(204, 0, 0, 0.04);
+}
+
+.event-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  font-size: 0.825rem;
+  line-height: 1.4;
+  color: var(--txt);
+}
+
+.event-chip-label {
+  font-weight: 700;
+  opacity: 0.6;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Content body ── */
+.event-body {
+  padding: 0 2rem 2rem;
+}
+
+/* ── Section ── */
+.event-section {
+  padding: 1.75rem 0 0;
+}
+
+.event-section + .event-section {
+  border-top: 1px solid rgba(128, 128, 128, 0.12);
+  margin-top: 0.25rem;
+}
+
+.event-section-title {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #cc0000;
+  margin: 0 0 1rem;
+}
+
+/* ── Schedule table ── */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.schedule-table tbody tr:nth-child(odd) {
+  background: rgba(128, 128, 128, 0.05);
+}
+
+.schedule-table tbody tr {
+  border-radius: 6px;
+}
+
+.schedule-time {
+  width: 5rem;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #cc0000;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.schedule-activity {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  color: var(--txt);
+  vertical-align: middle;
+}
+
+/* ── Bullet list ── */
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
-.event-location,
-.event-address,
-.event-details {
+.event-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
   font-size: 0.9rem;
-  color: var(--txt);
-  margin: 0;
-  line-height: 1.5;
-}
-
-.event-label {
-  font-weight: 600;
-}
-
-.event-card-footer {
-  margin-top: auto;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.event-cta {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #aaa;
-  transition: color 0.2s ease;
-}
-
-.event-card:hover .event-cta {
+  line-height: 1.55;
   color: var(--txt);
 }
 
-@keyframes popIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to   { opacity: 1; transform: scale(1); }
+.event-list li::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #cc0000;
+  flex-shrink: 0;
+  margin-top: 0.45em;
 }
 
-.event-card {
-  animation: popIn 0.6s ease-out forwards;
+/* ── Weight class cards ── */
+.weight-classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.weight-class-card {
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border-top: 3px solid #cc0000;
+  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
+}
+
+.weight-class-name {
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--txt);
+  margin: 0 0 0.7rem;
+}
+
+/* ── Contact footer ── */
+.event-footer {
+  margin: 0 2rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.15);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--txt);
+  opacity: 0.7;
+}
+
+.event-contact-link {
+  color: #cc0000;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.event-contact-link:hover {
+  opacity: 0.75;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .event-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .event-info-strip {
+    padding: 1rem 1.25rem;
+  }
+
+  .event-body {
+    padding: 0 1.25rem 1.5rem;
+  }
+
+  .event-footer {
+    margin: 0 1.25rem;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
