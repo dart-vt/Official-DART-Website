@@ -256,7 +256,7 @@ Official-DART-Website/
 For questions or issues:
 - **Technical Issues**: Contact the Web Development Team
 - **Content Updates**: Reach out to Operations Team
-- **General Inquiries**: Email nickolasc24@vt.edu
+- **General Inquiries**: Email wewriggers@vt.edu
 
 ## License
 

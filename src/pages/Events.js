@@ -14,7 +14,7 @@ const eventsList = [
     image: "/images/DART.svg",
     link: "https://www.robotcombatevents.com/events/7253",
     registration: { start: "March 29, 2026", end: "April 26, 2026" },
-    contact: "nickolasc24@vt.edu",
+    contact: "wewriggers@vt.edu",
     fee: "$20 per design",
     schedule: [
       { time: "8:00",  activity: "Doors open" },

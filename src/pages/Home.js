@@ -77,9 +77,9 @@ function Footer() {
         <div className="footer-section">
           <h3>Contact Us</h3>
           <div className="footer-links">
-            <a href="mailto:nickolasc24@vt.edu" className="footer-button">
+            <a href="mailto:wewriggers@vt.edu" className="footer-button">
               <img src={pub("/icons/email.svg")} alt="Email" />
-              <span>nickolasc24@vt.edu</span>
+              <span>wewriggers@vt.edu</span>
             </a>
           </div>
         </div>
