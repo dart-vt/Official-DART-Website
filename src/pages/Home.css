@@ -50,8 +50,8 @@
     display: none;
     right: 1rem;
     list-style: none;
-    justify-content: space-evenly;
-    width: 60%;
+    justify-content: center;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
     height: 100%;
     align-items: center;
   }
@@ -84,7 +84,7 @@
     padding: 0.75rem 1.25rem; /* FIX: larger tap targets */
     color: var(--txt);
     text-decoration: none;
-    font-family: monospace; /* FIX: matches desktop nav link font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* FIX: white divider works on colored bg */
     transition: background 0.15s ease, color 0.15s ease;
@@ -109,11 +109,12 @@
   }
   
   #navPanel li a {
-    font-size: clamp(20px, 2vw, 40px);
-    font-family: monospace;
+    font-size: clamp(16px, 1.4vw, 22px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--txt);
     text-decoration: none;
     display: block;
+    white-space: nowrap;
   }
   
   @media (min-width: 768px) and (orientation: landscape) {
@@ -128,28 +129,6 @@
     #hamburber {
       display: none;
     }
-  }
-  
-  /* Theme Toggle Button */
-  #theme {
-    position: absolute;
-    height: 2rem;
-    width: 2rem;
-    padding: 0;
-    text-align: center;
-    right: 1rem;
-    background: none;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  #theme img {
-    height: 2rem;
-    width: 2rem;
-  }
-  
-  #theme:hover {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 1);
   }
   
   /* Content */
@@ -173,7 +152,7 @@
     background: var(--overlay);
     color: var(--txt);
     border-top: 2px solid var(--txt);
-    font-family: monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   .footer-wrapper {
@@ -350,29 +329,15 @@ nav a:hover::after {
 }
 /* — Grow logo on hover — */
 #logo {
-  display: inline-block;           /* make sure transform works */
-  transition: transform 0.3s ease; /* smooth scale */
-}
-#logo:hover {
-  transform: scale(1.2);           /* grow 20% on hover */
-}
-
-/* — Or, if you prefer scaling the entire link container — */
-#logo_container {
   display: inline-block;
   transition: transform 0.3s ease;
 }
-#logo_container:hover {
-  transform: scale(1.0);
-}
-#logo {
-  display: inline-block;
-  transition: filter 0.3s ease, transform 0.3s ease;
+#logo:hover {
+  transform: scale(1.2);
 }
 
-#logo:hover {
-  filter: invert(100%);
-  transform: scale(1.2);
+#logo_container {
+  display: inline-block;
 }
 .sponsor-logo {
   width: 250px;    /* or whatever max width you need */
