@@ -12,15 +12,15 @@ export function About() {
       <h1 className="about-title">About DART Robotics</h1>
 
       <p className="about-text">
-        DART is a Virginia Tech design team built around combat robotics. We focus on
-        iterative design, rapid prototyping, and getting robots competition-ready on a
-        6-week build cycle. Each cycle ends with real data we use to improve the next one.
+        Welcome to DART, Virginia Tech's combat robotics division. We design, build, and
+        battle 1lb and 3lb robots that pack a massive punch, taking on rival colleges and
+        seasoned pros everywhere from local rumbles to the global stage at NHRL.
       </p>
 
       <p className="about-text">
-        We compete at various weight classes in robot fighting competitions held each
-        Fall and Spring semester. Competitions are how we test our designs, find what
-        breaks, and figure out what to do differently next time.
+        Our engineering philosophy centers on extreme durability and persistence - mastering
+        everything from shock-resistant electronics to high-pressure, 20-minute rebuilds
+        between fights.
       </p>
 
       <p className="about-text">

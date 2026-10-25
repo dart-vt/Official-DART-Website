@@ -164,7 +164,6 @@ export function Land() {
             </div>
           </div>
         </div>
-        <Link to="/team" className="about-btn">Full Team Roster</Link>
       </section>
 
       <section className="media">
@@ -180,9 +179,6 @@ export function Land() {
         <div className="sponsor-logos">
           <img src={pub("icons/SponsorLogo.svg")}  alt="Sponsor Logo"  className="sponsor-logo" />
           <img src={pub("icons/SponsorLogo2.svg")} alt="Sponsor Logo2" className="sponsor-logo" />
-        </div>
-        <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
-          <Link to="/sponsors" className="about-btn">See More</Link>
         </div>
       </section>
 

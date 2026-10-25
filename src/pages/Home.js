@@ -1,13 +1,11 @@
 import React from 'react';
 import {Route, Routes, Link, HashRouter } from 'react-router-dom'; // at the top
-import { Sponsors } from './Sponsors';
 import ScrollToTop from "./ScrollToTop";
 import { About } from './About';
 import { Land } from './Land';
 import data from './navigation.json';
 import './Home.css';
 import themes from './themes.json';
-import { Team } from './Team';
 import { Robots } from './Robots';
 import { Events } from './Events';
 const pub = (p) => `${process.env.PUBLIC_URL}/${p.replace(/^\/+/, '')}`;
@@ -24,12 +22,12 @@ function setTheme(themestr) {
   style.setProperty('--cta-color-hover', themestr === 'dark' ? '#00e676' : '#e60000');
 }
 
-function Header({ currentTheme, toggleTheme }) {
+function Header() {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
-    setTheme(currentTheme);
-  }, [currentTheme]);
+    setTheme('light');
+  }, []);
 
   // close the mobile menu when viewport becomes desktop to avoid stuck-open state
   React.useEffect(() => {
@@ -52,7 +50,7 @@ function Header({ currentTheme, toggleTheme }) {
       </button>
 
       <Link to="/" id="logo_container">
-        <img src={pub(currentTheme === 'light' ? 'images/DART-white.svg' : 'images/DART.svg')} id="logo" alt="logo" />
+        <img src={pub('images/DART-white.svg')} id="logo" alt="logo" />
       </Link>
 
       <nav id="navPanel" className={menuOpen ? 'open' : ''}>
@@ -62,10 +60,6 @@ function Header({ currentTheme, toggleTheme }) {
           </li>
         ))}
       </nav>
-
-      <button id="theme" onClick={toggleTheme}>
-        <img src={currentTheme === 'light' ? 'icons/moon.svg' : 'icons/sun.svg'} alt="theme toggle" />
-      </button>
     </div>
   );
 }
@@ -115,21 +109,16 @@ function Footer() {
 }
 
 function Home() {
-  const [currentTheme, setCurrentTheme] = React.useState('light');
-  const toggleTheme = () => setCurrentTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-
  return (
   <HashRouter>
     <ScrollToTop />
-    <Header currentTheme={currentTheme} toggleTheme={toggleTheme} />
+    <Header />
     <div id='content'>
         <Routes>
-          <Route index element={<Land currentTheme={currentTheme} />} />
+          <Route index element={<Land />} />
           <Route path="/about" element={<About />} />
-          <Route path="/team" element={<Team />} />
           <Route path="/events" element={<Events />} />
           <Route path="/robots" element={<Robots />} />
-          <Route path="/sponsors" element={<Sponsors />} />
         </Routes>
       </div>
       <Footer />

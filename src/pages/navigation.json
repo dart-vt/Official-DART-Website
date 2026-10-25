@@ -1,7 +1,5 @@
 {
 	"About": "/about",
 	"Events": "/events",
-	"Robots": "/robots",
-	"Team": "/team",
-	"Sponsors": "/sponsors"
+	"Robots": "/robots"
 }
