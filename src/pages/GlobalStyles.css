@@ -1078,12 +1078,26 @@ h3 {
 .member-card {
   min-width: 0;
 }
+.member-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-alt);
+  aspect-ratio: 0.85;
+  border-radius: 10px;
+}
+.member-photo img,
 .member-card > img {
   aspect-ratio: 0.85;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center 25%;
   background: var(--surface-alt);
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.member-card:hover .member-photo img,
+.member-card:hover > img {
+  transform: scale(1.04);
 }
 .member-info {
   padding-top: 20px;
@@ -1108,6 +1122,11 @@ h3 {
   padding: 24px;
   border: 1px solid var(--line);
   background: var(--surface);
+  border-radius: 14px;
+}
+.member-grid-single .member-photo {
+  aspect-ratio: 0.85;
+  border-radius: 8px;
 }
 .member-grid-single .member-info {
   padding-top: 0;
@@ -1118,16 +1137,60 @@ h3 {
 }
 .member-links {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 14px;
+  margin-top: 12px;
 }
 .member-links a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 5px;
   font-size: 0.83rem;
-  min-height: 44px;
+  min-height: 38px;
   color: var(--accent);
+  text-decoration: none;
+  transition: color 0.18s, border-color 0.18s, transform 0.18s;
+}
+.member-links .member-linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  max-width: 36px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border-radius: 50%;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  padding: 0;
+  transition: color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 0.2s cubic-bezier(0.22, 0.61, 0.36, 1),
+    background 0.2s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.member-links .member-linkedin-link svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+.member-links .member-linkedin-link:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.12);
+  transform: translateY(-2px);
+}
+:root[data-theme="light"] .member-links .member-linkedin-link {
+  background: rgba(0, 0, 0, 0.04);
+}
+:root[data-theme="light"] .member-links .member-linkedin-link:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.1);
 }
 .member-links svg {
   width: 15px;
@@ -1817,6 +1880,8 @@ h3 {
   }
   .button:hover,
   .robot-card:hover img,
+  .member-card:hover img,
+  .member-links .member-linkedin-link:hover,
   .text-link:hover .arrow {
     transform: none;
   }
