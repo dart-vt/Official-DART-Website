@@ -145,8 +145,8 @@ export function About() {
                 <h3>Nick Cowen</h3>
                 <p className="eyebrow">Leadership & mechanical design</p>
                 <p>
-                  Nick leads the DART organization and mechanical team with a
-                  focus on design innovation and battle-ready durability for our
+                  Nick co-founded DART and led the mechanical team with a focus
+                  on design innovation and battle-ready durability for our
                   flagship robots.
                 </p>
               </div>
