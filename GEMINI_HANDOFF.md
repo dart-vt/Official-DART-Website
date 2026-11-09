@@ -181,7 +181,17 @@ Following inspection of `https://www.vtcro.org/` and `https://www.vtcro.org/team
 4. **Combat Telemetry on Robot Cards**:
    - Robot cards display weight class tags (`3LB BEETLEWEIGHT` / `1LB ANTWEIGHT`) and weapon category badges with industrial backdrop chips.
 
-5. **Validation & Testing**:
+5. **Acronym Standardization & Hero Theme Fix**:
+   - Standardized all acronym references from `DRT` to `DART`.
+   - Updated `.hero` to use dynamic theme variables (`var(--bg)`, `var(--text)`), resolving the issue where the "BUILT TO TAKE A HIT" section stayed black in light mode. Verified live computed style: `backgroundColor: rgb(248, 247, 244)` in light mode.
+
+6. **Team Card Photo Zoom & LinkedIn Brand Icon Button**:
+   - Wrapped team member photos in `.member-photo` with `overflow: hidden; aspect-ratio: 0.85; border-radius: 10px;`. On `.member-card:hover`, the inner photo smoothly zooms via `transform: scale(1.04)` (`matrix(1.04, 0, 0, 1.04, 0, 0)`), mirroring the `.robot-card` zoom behavior.
+   - Replaced plain text "LinkedIn" with a 36×36px circular icon button containing an inline `<LinkedInIcon />` SVG with accessible `aria-label` and `title`.
+   - On hover, transitions to LinkedIn brand blue (`#0a66c2` / `rgb(10, 102, 194)`) with matching border, subtle brand-tinted background, and a `translateY(-2px)` lift.
+   - Reduced motion supported: hover transforms neutralized under `@media (prefers-reduced-motion: reduce)`.
+
+7. **Validation & Testing**:
    - ESLint: PASS, 0 warnings.
    - Jest Test Suite: PASS, 16/16 tests passing.
    - Asset Verification: PASS, 105 checks passing.
