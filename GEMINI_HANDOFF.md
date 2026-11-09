@@ -168,9 +168,9 @@ Following inspection of `https://www.vtcro.org/` and `https://www.vtcro.org/team
    - Preserved DART's combat orange (`--orange: #ff6b35`), maroon (`--maroon: #861f41`), and industrial display typography.
 
 2. **Institutional Badging & Metadata**:
-   - Desktop header brand mark displays `CRO // DRT` tag.
-   - Home hero displays `[VT CRO // DRT]` pill badge alongside live status dot.
-   - `Affiliation` component enhanced with `[ VT CRO // DESIGN TEAM · DRT ]` pill badge.
+   - Desktop header brand mark displays `CRO // DART` tag.
+   - Home hero displays `[VT CRO // DART]` pill badge alongside live status dot.
+   - `Affiliation` component enhanced with `[ VT CRO // DESIGN TEAM · DART ]` pill badge.
    - Responsive check: `.brand-org-tag` cleanly hidden below 760px to ensure 0px horizontal overflow and touch target protection for the mobile hamburger toggle.
 
 3. **Battle Honors & Verified Awards**:

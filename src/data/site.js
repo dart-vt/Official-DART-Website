@@ -6,7 +6,7 @@ export const site = {
   cro: "https://www.vtcro.org/",
   croDart: "https://www.vtcro.org/teams/crodart",
   croMetadata: {
-    code: "DRT",
+    code: "DART",
     type: "Design Team",
     division: "Combat Robotics",
     parentOrg: "Virginia Tech Competitive Robotics Organization",

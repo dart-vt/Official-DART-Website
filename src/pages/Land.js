@@ -23,7 +23,7 @@ export function Land() {
             <div className="hero-badge-row">
               <span className="status-dot" />
               <span className="eyebrow">Virginia Tech / Combat Robotics</span>
-              <span className="org-pill">VT CRO // DRT</span>
+              <span className="org-pill">VT CRO // DART</span>
             </div>
             <h1>
               BUILT TO <br />

@@ -59,7 +59,7 @@ export function Header({ theme, toggleTheme }) {
             DART<span className="brand-caption">VIRGINIA TECH</span>
           </span>
           <span className="brand-org-tag" aria-hidden="true">
-            CRO // DRT
+            CRO // DART
           </span>
         </Link>
         <nav

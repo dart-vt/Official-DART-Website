@@ -111,7 +111,7 @@ export function Affiliation({ compact = false }) {
       <div>
         <div className="affiliation-badge-row">
           <p className="eyebrow">Part of something bigger</p>
-          <span className="org-pill">VT CRO // DESIGN TEAM · DRT</span>
+          <span className="org-pill">VT CRO // DESIGN TEAM · DART</span>
         </div>
         <p>
           DART is represented as <a href={site.croDart}>CroDart</a> within{" "}
