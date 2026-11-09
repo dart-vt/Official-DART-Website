@@ -1,263 +1,93 @@
-# Official DART Website
+﻿# DART Robotics website
 
-## Table of Contents
+The official Destructive Arena Robotics Team website at Virginia Tech. DART is represented within the Competitive Robotics Organization at Virginia Tech (VT CRO) as CroDart.
 
-- [Overview](#overview)
-- [Website Structure](#website-structure)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started (For Developers)](#getting-started-for-developers)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Build for Production](#build-for-production)
-- [Deployment](#deployment)
-- [Updating Content (For Club Members)](#updating-content-for-club-members)
-- [Important Notes for Non-Technical Updates](#important-notes-for-non-technical-updates)
-- [Common Updates](#common-updates)
-- [Adding a New Team Member](#adding-a-new-team-member)
-- [Updating Robot Information](#updating-robot-information)
-- [Adding a Sponsor](#adding-a-sponsor)
-- [Updating About Content](#updating-about-content)
-- [Changing Theme Colors](#changing-theme-colors)
-- [Adding New Pages](#adding-new-pages)
-- [Media and Assets](#media-and-assets)
-- [Contact Information Updates](#contact-information-updates)
-- [Social Media Links](#social-media-links)
-- [File Structure](#file-structure)
-- [Contributing](#contributing)
-- [Support](#support)
-- [License](#license)
+## Local development
 
-## Overview
+Use Node.js 20 (matching GitHub Actions) and npm.
 
-This is the official website for **DART Robotics** (Destructive Arena Robotics Team), Virginia Tech's premier combat robotics team. Founded in 2022, DART specializes in designing, building, and competing with destructive robots.
+```sh
+npm ci
+npm start
+```
 
-The website serves as the primary online presence for the team, showcasing our robots, team members, sponsors, and providing information for prospective members and supporters.
+The development server prints its local address. Production is hosted at
+https://dart-vt.github.io/Official-DART-Website/ with hash routes:
 
-## Website Structure
+- `#/` â€” Home
+- `#/about` â€” About and team history
+- `#/robots` â€” Robot portfolio
+- `#/team` â€” Leadership, contributors, and alumni
+- `#/events` â€” Events and archived requirements
+- `#/sponsors` â€” Sponsors and sponsorship inquiries
 
-The website is built as a single-page application (SPA) using React and consists of the following main sections:
+## Verify changes
 
-### Home Page (Landing)
-- **Hero Section**: Features a banner image with the DART logo, tagline "Innovating through destruction – Virginia Tech's Combat Robotics Team", and overlay text.
-- **About Preview**: Brief introduction to the team with a call-to-action to the full About page.
-- **Robots Showcase**: Preview of our current robots with links to the full Robots page.
-- **Founders Section**: Introduces the founding members (Trevor Ierardi and Nick Cowen) with their roles and photos.
-- **Media Gallery**: Carousel featuring videos and images of robot battles and team activities.
-- **Sponsors Section**: Display of current sponsors with links to the full Sponsors page.
-- **Join Section**: Call-to-action for prospective members with contact email.
-
-### About Page
-Provides detailed information about:
-- Team history and founding (2022)
-- Mission: "Innovate through destruction"
-- Focus areas: Mechanical, electrical, software engineering
-- Culture: Learning-first environment, open to all experience levels
-- Activities: Competitions, mentorship, hands-on learning
-- Featured image of a team event
-
-### Robots Page
-Showcases the team's robot portfolio, including:
-- **Storm Surge**: High-speed spinner bot for aggressive combat
-- **Pinhead Larry**: Robust flipper robot for precision control
-- **Eggbeater**: Compact vertical spinner for maneuverability
-- **Be Careful**: Overhead saw bot with vertical cutting blade
-- **Refuse**: Low-profile circular launcher
-- **Goaline**: Triangular wedge spinner
-- **Pickle Jar**: Compact drum-style spinner
-- **CyclicalSubversion**: Ramp for controlled lifting and disruption
-
-Each robot entry includes an image, type classification, and brief description.
-
-### Team Page
-Organized into several sections:
-- **Team Leadership**: Current team leads and their roles
-- **Engineering Team Leads**: Specialists for specific robot projects
-- **Operations Team**: Programming, systems, community management, outreach
-- **Web Development Team**: Maintainers of this website
-- **Special Thanks**: Contributors and past helpers
-- **Alumni**: Graduated members by year
-
-Each team member card includes photo, name, role, and social links (LinkedIn, email where available).
-
-### Sponsors Page
-- **Hero Section**: Thank you message and sponsorship call-to-action
-- **Sponsor Grid**: Current sponsors with logos and links to their websites
-- **Contact Information**: Email template for sponsorship inquiries
-- Current sponsors include Calders Coffee Cafe and Undergraduate Student Senate of Virginia Tech
-
-## Features
-
-- **Responsive Design**: Optimized for desktop and mobile viewing
-- **Dark/Light Theme Toggle**: Accessible theme switching with custom color schemes
-- **Smooth Scrolling and Animations**: Intersection Observer-based animations for engaging user experience
-- **Social Media Integration**: Links to Instagram, Discord, LinkedIn, YouTube, and GobblerConnect
-- **Contact Integration**: Direct email links for inquiries and sponsorships
-- **SEO Optimization**: Generated sitemap for search engine indexing
-
-## Technologies Used
-
-- **Frontend Framework**: React 19
-- **Routing**: React Router DOM v7
-- **Build Tool**: Create React App
-- **Styling**: Custom CSS with CSS Variables for theming
-- **Deployment**: GitHub Pages
-- **Version Control**: Git
-- **Package Management**: npm
-
-## Getting Started (For Developers)
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-- Git
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/dart-vt/Official-DART-Website.git
-   cd Official-DART-Website
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm start
-   ```
-   The website will be available at `http://localhost:3000`.
-
-### Build for Production
-
-```bash
+```sh
+npm run lint
+npm test -- --watchAll=false --runInBand
 npm run build
+npm run verify:assets
 ```
 
-This creates an optimized build in the `build/` directory.
+Tests cover routes, menu/focus behavior, themes, gallery controls, event archival state, content retention, and deployment paths. Also inspect all pages at desktop, tablet, and mobile widths, with keyboard navigation, both themes, reduced motion, and 200% zoom. Tests do not substitute for browser layout checks.
 
-### Deployment
+## Deployment
 
-The website is configured for automatic deployment to GitHub Pages:
+The authoritative pipeline is `.github/workflows/pages.yml`: a push to `main` installs with `npm ci`, builds using Node 20, uploads `build/`, and deploys through GitHub Pages Actions. Work on a feature branch and review before merging.
 
-```bash
-npm run deploy
+The `homepage` field controls the project base path. Keep `HashRouter` so shared URLs and refreshes work without server rewrites. All public asset paths go through `src/utils/assets.js`; imported fonts are bundled by CRA.
+
+The legacy `npm run deploy` script publishes to the `gh-pages` branch. It is not the current Actions pipeline and should not be used for ordinary development. Root-level `static/`, `images/`, and `docs/` are historical artifacts; edit `src/` and `public/`, not those copies.
+
+## Updating content
+
+| Content                                                 | Source                                    |
+| ------------------------------------------------------- | ----------------------------------------- |
+| Navigation, metadata, email, social links, VT CRO links | `src/data/site.js`                        |
+| Robots and retained descriptions                        | `src/data/robots.js`                      |
+| Leadership, operations, web contributors, alumni        | `src/data/team.js`                        |
+| Sponsors and logo destinations                          | `src/data/sponsors.js`                    |
+| Event schedule, rules, dates, weight classes            | `src/data/events.js`                      |
+| Homepage and About narrative                            | `src/pages/Land.js`, `src/pages/About.js` |
+| Design tokens, components, responsive layouts           | `src/pages/GlobalStyles.css`              |
+
+Use real, verified content. Empty or `#` member links are intentionally hidden. Commented-out historical records remain inactive. Do not infer current membership or competition results from old photographs.
+
+Event records include an ISO date and an explicit `endsAt` timestamp with timezone offset. After that timestamp the UI shows an archived event, retaining its original requirements without advertising expired registration. Add a new record for a new event rather than overwriting history.
+
+VT CRO is an organizational affiliation, not a sponsor. Preserve both the VT CRO homepage and CroDart team profile links.
+
+## Images and fonts
+
+Original assets are retained. The site uses responsive WebP derivatives described by `src/data/images.json`. To regenerate them after updating the source map:
+
+```sh
+python -m pip install Pillow
+python scripts/optimize-images.py
 ```
 
-This builds the project and pushes the `build/` folder to the `gh-pages` branch.
+Commit the derivatives and manifest; Python is not required by the production build. Add a source entry and use the shared `Photo` component. It supplies dimensions, responsive sizes, and lazy loading. Only prominent page images should opt into eager loading. Sponsor logos use their original assets on neutral white surfaces.
 
-## Updating Content (For Club Members)
+The locally hosted Barlow and Barlow Condensed fonts are licensed under the SIL Open Font License; see `src/assets/fonts/OFL.txt`. There are no runtime font or icon CDN dependencies.
 
-### Important Notes for Non-Technical Updates
+The gallery preserves the original combat video with native controls and no autoplay. Any replacement video should include accurate captions for speech and meaningful audio, plus an appropriate visual description.
 
-- **Always work on a new branch**: Create a feature branch for changes to avoid disrupting the live site
-- **Test locally**: Run `npm start` and check your changes before committing
-- **Commit messages**: Use clear, descriptive commit messages
-- **Images**: Ensure images are optimized (under 500KB) and in appropriate formats (JPG/PNG for photos, SVG for logos)
-- **Backup**: Keep backups of important files before making changes
+## Accessibility and themes
 
-### Common Updates
+Shared navigation includes active states, a mobile disclosure, Escape handling, and focus restoration. A skip link and route focus management support keyboard navigation. Standard details/summary controls expose event rules. Reduced-motion settings disable decorative transitions.
 
-#### Adding a New Team Member
+One theme hook runs in the application shell. It honors a valid saved `theme` preference, otherwise follows the operating system; the toggle saves an explicit choice. Storage failures do not prevent theme changes. Do not add page-level theme mutations.
 
-1. Add their photo to `public/images/` (format: `First Last.png` or `.jpg`)
-2. Edit `src/pages/Team.js`:
-   - Add to the appropriate array (`teamLeadership`, `engineeringLeads`, `operationsLeads`, `webTeam`, etc.)
-   - Include: `name`, `role`, `image` (path), `linkedin` (optional), `email` (optional)
+## SEO limitations
 
-#### Updating Robot Information
+The HTML template provides one canonical site URL and social preview. Client navigation updates titles and descriptions. Hash routes are not independently indexed pages, and social crawlers generally see the base HTML metadata. The sitemap intentionally lists only the canonical base document; do not add fictitious `/about` or `/robots` server URLs.
 
-1. Add robot image to `public/images/` if needed
-2. Edit `src/pages/Robots.js`:
-   - Add new object to `robotList` array with `name`, `type`, `image`, `description`
+Regenerate the sitemap after changing `homepage` with `npm run sitemap`. Independent page indexing would require a separately reviewed routing/prerendering change.
 
-#### Adding a Sponsor
+## Content requiring confirmation
 
-1. Add sponsor logo to `public/images/` (preferably SVG or high-quality PNG)
-2. Edit `src/pages/Sponsors.js`:
-   - Add to `SPONSORS` array with `name`, `url`, `logo`, `tier`
-
-#### Updating About Content
-
-Edit `src/pages/About.js` to modify the text content and images.
-
-#### Changing Theme Colors
-
-Edit `src/pages/themes.json` to update color schemes for light and dark themes.
-
-#### Adding New Pages
-
-1. Create new component in `src/pages/`
-2. Add route in `src/pages/Home.js` Routes component
-3. Update `navigation.json` if it should appear in the main nav
-4. Update `generate-sitemap.js` to include the new page
-
-### Media and Assets
-
-- **Images**: Store in `public/images/` for static assets, `src/assets/` for imported assets
-- **Videos**: Place in `public/videos/` and reference via `process.env.PUBLIC_URL`
-- **Icons**: Use SVG format in `public/icons/`
-
-### Contact Information Updates
-
-Update email addresses in:
-- `src/pages/Home.js` (Footer component)
-- `src/pages/Sponsors.js` (sponsorship email)
-- `src/pages/Land.js` (join section email)
-
-### Social Media Links
-
-Update social links in the Footer component in `src/pages/Home.js`.
-
-## File Structure
-
-```
-Official-DART-Website/
-├── public/                 # Static assets
-│   ├── images/            # Photos and graphics
-│   ├── icons/             # SVG icons
-│   ├── videos/            # Video files
-│   └── index.html         # HTML template
-├── src/
-│   ├── assets/            # Imported media
-│   ├── pages/             # React components
-│   │   ├── Home.js        # Main app component
-│   │   ├── Land.js        # Landing page
-│   │   ├── About.js       # About page
-│   │   ├── Team.js        # Team page
-│   │   ├── Robots.js      # Robots page
-│   │   ├── Sponsors.js    # Sponsors page
-│   │   ├── *.css          # Component styles
-│   │   ├── navigation.json # Navigation config
-│   │   └── themes.json    # Theme colors
-│   ├── utils/
-│   │   └── useTheme.js    # Theme hook
-│   └── index.js           # App entry point
-├── docs/                  # Build output for GitHub Pages
-├── package.json           # Dependencies and scripts
-└── generate-sitemap.js    # Sitemap generator
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-feature`)
-3. Make your changes
-4. Test locally (`npm start`)
-5. Commit your changes (`git commit -m 'Add new feature'`)
-6. Push to the branch (`git push origin feature/new-feature`)
-7. Open a Pull Request
-
-## Support
-
-For questions or issues:
-- **Technical Issues**: Contact the Web Development Team
-- **Content Updates**: Reach out to Operations Team
-- **General Inquiries**: Email wewriggers@vt.edu
-
-## License
-
-This project is maintained by DART Robotics and is available for use by the team and its members.
+- Pickle Jar's existing weapon label says â€œSpikes,â€ while its stored description describes a spinner. Refuse's stored description also needs verification against its photograph. All six original descriptions remain in data; none is newly published as a verified specification.
+- Older homepage copy referenced AutoNav and VEX-style matches alongside RoboGames. The current About copy and official CroDart profile describe combat robotics and NHRL. The refresh uses that focused description; confirm historical participation before reintroducing those older claims.
+- The restored Team and Sponsors records are the repository's existing records, not a newly verified current roster or sponsorship list.
+- The existing Discord invite and organization contact addresses are retained; automated HTTP checks cannot establish invite validity or email deliverability.

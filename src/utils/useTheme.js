@@ -1,39 +1,46 @@
-// src/utils/useTheme.js
-import { useEffect } from 'react';
+import { useEffect, useState } from "react";
 
+const systemTheme = () =>
+  window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+function readPreference() {
+  try {
+    const saved = localStorage.getItem("theme");
+    return saved === "dark" || saved === "light" ? saved : null;
+  } catch {
+    return null;
+  }
+}
+
+// Mounted once in the app shell; pages use tokens instead of mutating the theme.
 export function useTheme() {
+  const [preference, setPreference] = useState(readPreference);
+  const [system, setSystem] = useState(systemTheme);
+  const theme = preference || system;
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    const isDark = savedTheme
-      ? savedTheme === 'dark'
-      : window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = isDark ? 'dark' : 'light';
-
-    const themes = {
-      light: {
-        '--overlay': '#b84c4c',
-        '--bg': '#dedede',
-        '--txt': '#1a1919',
-        '--icon-filter': 'none',
-        '--cta-color': '#cc0000',
-        '--cta-color-hover': '#e60000',
-      },
-      dark: {
-        '--overlay': '#3a5e27',
-        '--bg': '#2b2b2b',
-        '--txt': '#dedede',
-        '--icon-filter': 'invert(1)',
-        '--cta-color': '#00cc66',
-        '--cta-color-hover': '#00e676',
-      },
+    const query = window.matchMedia("(prefers-color-scheme: dark)");
+    const update = () => setSystem(query.matches ? "dark" : "light");
+    query.addEventListener("change", update);
+    const sync = (event) => {
+      if (event.key === "theme" || event.key === null)
+        setPreference(readPreference());
     };
-
-    const root = document.documentElement;
-    const selected = themes[theme];
-    for (const key in selected) {
-      root.style.setProperty(key, selected[key]);
-    }
-
-    localStorage.setItem('theme', theme);
+    window.addEventListener("storage", sync);
+    return () => {
+      query.removeEventListener("change", update);
+      window.removeEventListener("storage", sync);
+    };
   }, []);
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    setPreference(next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      /* Still works without persistent storage. */
+    }
+  };
+  return { theme, toggleTheme };
 }

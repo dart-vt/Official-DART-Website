@@ -1,324 +1,69 @@
-import React, { useEffect } from "react";
-import './Team.css';
-
-const teamLeadership = [
-  /*{
-    name: "Trevor Ierardi",
-    role: "Team Lead / Operations Lead / MBSE Officer / Campus Manager",
-    image: "images/Trevor Ierardi.png",
-    linkedin: "#",
-  },*/
-  {
-    name: "Nick Cowen",
-    role: "Team Lead / Operations Lead / Mechanical Lead",
-    image: "images/Nick Cowen.png",
-    linkedin: "#",
-    email: ""
-  }
-];
-
-const engineeringLeads = [
-  {
-    name: "Tiernan Bain",
-    role: "Eggbeater Lead",
-    image: "images/Tiernan Bain.png",
-    linkedin: "https://www.linkedin.com/in/tiernan-bain/",
-  },
-  {
-    name: "Luke Hartman",
-    role: "Storm Surge Lead",
-    image: "images/Luke Hartman.png",
-    linkedin: "#",
-  },
-  /*{
-    name: "TBA",
-    role: "Pinhead Larry Lead / Flipper Lead / Full Body Spin Lead",
-    image: "images/QuestionMark.png",
-    linkedin: "#",
-    email: ""
-  },
-  {
-    name: "TBD",
-    role: "TBD Bot Lead (2 positions)",
-    image: "images/QuestionMark.png",
-    linkedin: "#",
-    email: ""
-  },
-  {
-    name: "TBD in March",
-    role: "Autonomous Lead",
-    image: "images/QuestionMark.png",
-    linkedin: "#",
-    email: ""
-  },
-  {
-    name: "TBD",
-    role: "Control Lead",
-    image: "images/QuestionMark.png",
-    linkedin: "#",
-    email: ""
-  }*/
-];
-
-const operationsLeads = [
-  {
-    name: "Timothy Fish",
-    role: "Programming Lead",
-    image: "images/Timothy Fish.png",
-    linkedin: "#",
-  },
-  {
-    name: "Edison Melendez",
-    role: "Systems Lead",
-    image: "images/Edison Melendez.jpeg",
-    linkedin: "https://www.linkedin.com/in/edison-melendez-0a0029294/",
-  },
-  {
-    name: "Hanru Li",
-    role: "Systems Team",
-    image: "images/Hanru Li.jpg",
-    linkedin: "https://www.linkedin.com/in/hanru-li-ba9012269/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3Bg6nmr3hbT%2BCEZ8TST1BZeg%3D%3D",
-  },
-  {
-    name: "Louis Bagtas",
-    role: "Community Manager / Campus Manager",
-    image: "images/Eric Louis Bagtas.png",
-    linkedin: "https://www.linkedin.com/in/eric-louis-bagtas-47a576298/",
-  },
-  {
-    name: "Britny Jiang",
-    role: "Outreach Manager",
-    image: "images/Britny Jiang.jpeg",
-    linkedin: "https://www.linkedin.com/in/britny-jiang-a7894629a/",
-    email: ""
-  },
-  /*{
-    name: "Trevor Ierardi & VACANT",
-    role: "MBSE Officer",
-    image: "images/QuestionMark.png",
-    linkedin: "#",
-    email: ""
-  },
-  {
-    name: "VACANT",
-    role: "Financial Officer",
-    image: "images/QuestionMark.png",
-    linkedin: "#",
-    email: ""
-  },
-  {
-    name: "TBD",
-    role: "SharePoint Manager",
-    image: "images/QuestionMark.png",
-    linkedin: "#",
-    email: ""
-  }*/
-];
-
-const webTeam = [
-  {
-    name: "Justin Burns",
-    role: "Web Developer",
-    image: "images/Justin Burns.jpg",
-    linkedin: "https://www.linkedin.com/in/justin-burns-465036291",
-  },
-  {
-    name: "Aron Mulugeta",
-    role: "Web Developer",
-    image: "images/Aron Mulugeta.jpeg",
-    linkedin: "https://www.linkedin.com/in/amulugeta/",
-  }
-];
-
-// --- Alumni data ---
-const alumni = [
-  {
-    year: 2024,
-    columns: [["Trevor Ierardi"]]
-  }
-];
-
-const specialThanks = [
-  {
-    name: "Samartha Madhyastha",
-    role: "Helped set up the website",
-    image: "images/Samartha Madhyastha.jpeg",
-    linkedin: "https://www.linkedin.com/in/samartha-m03/",
-    email: ""
-  }
-];
+import React from "react";
+import { PageIntro, Photo, Recruitment } from "../components/UI";
+import { MemberCard } from "../components/Cards";
+import { alumni, teamGroups } from "../data/team";
 
 export function Team() {
-  useEffect(() => {
-    const root = document.documentElement;
-
-    const applyTheme = (isDark) => {
-      root.style.setProperty('--link-hover', isDark ? '#158df7ff' : '#cc0000');
-    };
-
-    // Initial check
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(isDark);
-
-    // Listen for theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => applyTheme(e.matches);
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
-
   return (
-    <div className="team-page">
-      <h1 className="team-title">Team Leadership</h1>
-      <div className="team-grid">
-        {teamLeadership.map((member, index) => (
-          <div className="team-card" key={index}>
-            <img src={member.image} alt={member.name} className="team-photo" />
-            <div className="team-info">
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
-            </div>
-            <div className="team-links">
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-linkedin"></i>
-                </a>
-              )}
-              {member.email && (
-                <a href={`mailto:${member.email}`}>
-                  <i className="fa-solid fa-envelope"></i>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+    <>
+      <PageIntro
+        number="03"
+        eyebrow="The people behind DART"
+        title={
+          <>
+            Great robots. <br />
+            Even better teammates.
+          </>
+        }
+      >
+        Engineering is a team effort. Meet the people bringing our machines—and
+        our community—to life.
+      </PageIntro>
+      <div className="container">
+        <figure className="team-panorama">
+          <Photo
+            name="team-mono"
+            alt="The DART team at a general assembly meeting"
+            eager
+            sizes="90vw"
+          />
+          <figcaption>Built together / DART Robotics</figcaption>
+        </figure>
       </div>
-
-      <h1 className="team-title">Engineering Team Leads</h1>
-      <div className="team-grid">
-        {engineeringLeads.map((member, index) => (
-          <div className="team-card" key={index}>
-            <img src={member.image} alt={member.name} className="team-photo" />
-            <div className="team-info">
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
+      <div className="container team-sections">
+        {teamGroups.map((group, index) => (
+          <section className="team-section" key={group.title}>
+            <div className="team-section-title">
+              <p className="eyebrow">
+                {String(index + 1).padStart(2, "0")} / Our people
+              </p>
+              <h2>{group.title}</h2>
             </div>
-            <div className="team-links">
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-linkedin"></i>
-                </a>
-              )}
-              {member.email && (
-                <a href={`mailto:${member.email}`}>
-                  <i className="fa-solid fa-envelope"></i>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h1 className="team-title">Operations Team</h1>
-      <div className="team-grid">
-        {operationsLeads.map((member, index) => (
-          <div className="team-card" key={index}>
-            <img src={member.image} alt={member.name} className="team-photo" />
-            <div className="team-info">
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
-            </div>
-            <div className="team-links">
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-linkedin"></i>
-                </a>
-              )}
-              {member.email && (
-                <a href={`mailto:${member.email}`}>
-                  <i className="fa-solid fa-envelope"></i>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h1 className="team-title">Web Development Team</h1>
-      <div className="team-grid">
-        {webTeam.map((member, index) => (
-          <div className="team-card" key={index}>
-            <img src={member.image} alt={member.name} className="team-photo" />
-            <div className="team-info">
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
-            </div>
-            <div className="team-links">
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-linkedin"></i>
-                </a>
-              )}
-              {member.email && (
-                <a href={`mailto:${member.email}`}>
-                  <i className="fa-solid fa-envelope"></i>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* --- Special Thanks BEFORE Alumni (card format) --- */}
-      <h1 className="team-title">Special Thanks</h1>
-      <div className="team-grid">
-        {specialThanks.map((member, index) => (
-          <div className="team-card" key={index}>
-            <img src={member.image} alt={member.name} className="team-photo" />
-            <div className="team-info">
-              <h3>{member.name}</h3>
-              <p>{member.role}</p>
-            </div>
-            <div className="team-links">
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank" rel="noreferrer">
-                  <i className="fa-brands fa-linkedin"></i>
-                </a>
-              )}
-              {member.email && (
-                <a href={`mailto:${member.email}`}>
-                  <i className="fa-solid fa-envelope"></i>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h1 className="team-title">Alumni</h1>
-      {/* --- Alumni Section --- */}
-      <section className="alumni-section">
-        {alumni.map(({ year, columns }) => (
-          <div className="alumni-year-block" key={year}>
-            <h2 className="alumni-year">{year}</h2>
-            <div className="alumni-columns">
-              {columns.map((list, idx) => (
-                <ul className="alumni-list" key={idx}>
-                  {list.map((name) => (
-                    <li key={name}>
-                      <span className="dot" aria-hidden="true"></span>
-                      <span className="name">{name}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="member-grid">
+              {group.members.map((member) => (
+                <MemberCard key={member.name} member={member} />
               ))}
             </div>
-          </div>
+          </section>
         ))}
-      </section>
-    </div>
+        <section className="team-section">
+          <div className="team-section-title">
+            <p className="eyebrow">06 / Always part of DART</p>
+            <h2>Alumni</h2>
+          </div>
+          {alumni.map(({ year, columns }) => (
+            <div className="alumni-row" key={year}>
+              <h3>{year}</h3>
+              <ul>
+                {columns.flat().map((name) => (
+                  <li key={name}>{name}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </section>
+      </div>
+      <Recruitment />
+    </>
   );
 }

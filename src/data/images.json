@@ -1,0 +1,334 @@
+{
+  "arena": {
+    "width": 2010,
+    "height": 1170,
+    "variants": [
+      {
+        "src": "images/optimized/arena-480.webp",
+        "width": 480
+      },
+      {
+        "src": "images/optimized/arena-960.webp",
+        "width": 960
+      },
+      {
+        "src": "images/optimized/arena-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "builders": {
+    "width": 4032,
+    "height": 3024,
+    "variants": [
+      {
+        "src": "images/optimized/builders-480.webp",
+        "width": 480
+      },
+      {
+        "src": "images/optimized/builders-960.webp",
+        "width": 960
+      },
+      {
+        "src": "images/optimized/builders-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "team": {
+    "width": 3911,
+    "height": 2001,
+    "variants": [
+      {
+        "src": "images/optimized/team-480.webp",
+        "width": 480
+      },
+      {
+        "src": "images/optimized/team-960.webp",
+        "width": 960
+      },
+      {
+        "src": "images/optimized/team-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "team-mono": {
+    "width": 3911,
+    "height": 2001,
+    "variants": [
+      {
+        "src": "images/optimized/team-mono-480.webp",
+        "width": 480
+      },
+      {
+        "src": "images/optimized/team-mono-960.webp",
+        "width": 960
+      },
+      {
+        "src": "images/optimized/team-mono-1600.webp",
+        "width": 1600
+      }
+    ]
+  },
+  "workbench": {
+    "width": 4032,
+    "height": 3024,
+    "variants": [
+      {
+        "src": "images/optimized/workbench-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/workbench-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "electronics": {
+    "width": 3024,
+    "height": 4032,
+    "variants": [
+      {
+        "src": "images/optimized/electronics-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/electronics-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "pinhead": {
+    "width": 305,
+    "height": 380,
+    "variants": [
+      {
+        "src": "images/optimized/pinhead-305.webp",
+        "width": 305
+      }
+    ]
+  },
+  "be-careful": {
+    "width": 520,
+    "height": 591,
+    "variants": [
+      {
+        "src": "images/optimized/be-careful-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/be-careful-520.webp",
+        "width": 520
+      }
+    ]
+  },
+  "refuse": {
+    "width": 1173,
+    "height": 782,
+    "variants": [
+      {
+        "src": "images/optimized/refuse-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/refuse-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "goaline": {
+    "width": 520,
+    "height": 580,
+    "variants": [
+      {
+        "src": "images/optimized/goaline-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/goaline-520.webp",
+        "width": 520
+      }
+    ]
+  },
+  "pickle-jar": {
+    "width": 1173,
+    "height": 782,
+    "variants": [
+      {
+        "src": "images/optimized/pickle-jar-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/pickle-jar-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "cyclical-subversion": {
+    "width": 587,
+    "height": 782,
+    "variants": [
+      {
+        "src": "images/optimized/cyclical-subversion-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/cyclical-subversion-587.webp",
+        "width": 587
+      }
+    ]
+  },
+  "trevor-ierardi": {
+    "width": 570,
+    "height": 606,
+    "variants": [
+      {
+        "src": "images/optimized/trevor-ierardi-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/trevor-ierardi-570.webp",
+        "width": 570
+      }
+    ]
+  },
+  "nick-cowen": {
+    "width": 544,
+    "height": 613,
+    "variants": [
+      {
+        "src": "images/optimized/nick-cowen-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/nick-cowen-544.webp",
+        "width": 544
+      }
+    ]
+  },
+  "tiernan-bain": {
+    "width": 287,
+    "height": 270,
+    "variants": [
+      {
+        "src": "images/optimized/tiernan-bain-287.webp",
+        "width": 287
+      }
+    ]
+  },
+  "luke-hartman": {
+    "width": 282,
+    "height": 265,
+    "variants": [
+      {
+        "src": "images/optimized/luke-hartman-282.webp",
+        "width": 282
+      }
+    ]
+  },
+  "timothy-fish": {
+    "width": 389,
+    "height": 367,
+    "variants": [
+      {
+        "src": "images/optimized/timothy-fish-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/timothy-fish-389.webp",
+        "width": 389
+      }
+    ]
+  },
+  "edison-melendez": {
+    "width": 640,
+    "height": 603,
+    "variants": [
+      {
+        "src": "images/optimized/edison-melendez-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/edison-melendez-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "hanru-li": {
+    "width": 1228,
+    "height": 1159,
+    "variants": [
+      {
+        "src": "images/optimized/hanru-li-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/hanru-li-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "eric-louis-bagtas": {
+    "width": 320,
+    "height": 302,
+    "variants": [
+      {
+        "src": "images/optimized/eric-louis-bagtas-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "britny-jiang": {
+    "width": 640,
+    "height": 603,
+    "variants": [
+      {
+        "src": "images/optimized/britny-jiang-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/britny-jiang-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "justin-burns": {
+    "width": 1587,
+    "height": 1497,
+    "variants": [
+      {
+        "src": "images/optimized/justin-burns-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/justin-burns-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "aron-mulugeta": {
+    "width": 800,
+    "height": 800,
+    "variants": [
+      {
+        "src": "images/optimized/aron-mulugeta-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/aron-mulugeta-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "samartha-madhyastha": {
+    "width": 160,
+    "height": 150,
+    "variants": [
+      {
+        "src": "images/optimized/samartha-madhyastha-160.webp",
+        "width": 160
+      }
+    ]
+  }
+}
