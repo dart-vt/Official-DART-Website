@@ -39,7 +39,9 @@ export function Team() {
               </p>
               <h2>{group.title}</h2>
             </div>
-            <div className="member-grid">
+            <div
+              className={`member-grid${group.members.length === 1 ? " member-grid-single" : ""}`}
+            >
               {group.members.map((member) => (
                 <MemberCard key={member.name} member={member} />
               ))}

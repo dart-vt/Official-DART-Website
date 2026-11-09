@@ -7,10 +7,19 @@ import { Arrow } from "./UI";
 export function Header({ theme, toggleTheme }) {
   const [open, setOpen] = useState(false);
   const menuButton = useRef(null);
+  const navigationPanel = useRef(null);
   const { pathname } = useLocation();
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+  useEffect(() => {
+    // The disclosure sits after desktop links; move keyboard focus into the
+    // expanded mobile navigation so Tab immediately reaches its destinations.
+    if (open && navigationPanel.current) {
+      navigationPanel.current.scrollTop = 0;
+      navigationPanel.current.querySelector("a")?.focus({ preventScroll: true });
+    }
+  }, [open]);
   useEffect(() => {
     const query = window.matchMedia("(min-width: 1100px)");
     const closeOnDesktop = () => {
@@ -51,6 +60,7 @@ export function Header({ theme, toggleTheme }) {
           </span>
         </Link>
         <nav
+          ref={navigationPanel}
           id="primary-navigation"
           className={`primary-navigation ${open ? "is-open" : ""}`}
           aria-label="Main navigation"

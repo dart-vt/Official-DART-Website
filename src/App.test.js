@@ -39,9 +39,10 @@ test.each([
     expect(document.title).toContain("DART");
     // Metadata has no accessible role; inspect the document head directly.
     // eslint-disable-next-line testing-library/no-node-access
-    expect(
-      document.querySelector('meta[name="description"]').content.length,
-    ).toBeGreaterThan(30);
+    const description = document.querySelector(
+      'meta[name="description"]',
+    ).content;
+    expect(description.length).toBeGreaterThan(30);
   },
 );
 
@@ -50,6 +51,10 @@ test("menu supports Escape, closes on navigation, and moves focus to content", (
   const toggle = screen.getByRole("button", { name: "Open navigation" });
   userEvent.click(toggle);
   expect(toggle).toHaveAttribute("aria-expanded", "true");
+  const menu = screen.getByRole("navigation", { name: "Main navigation" });
+  expect(within(menu).getByRole("link", { name: "About" })).toHaveFocus();
+  userEvent.tab();
+  expect(within(menu).getByRole("link", { name: "Robots" })).toHaveFocus();
   fireEvent.keyDown(toggle, { key: "Escape" });
   expect(toggle).toHaveAttribute("aria-expanded", "false");
   expect(toggle).toHaveFocus();
@@ -138,6 +143,7 @@ test("event archive preserves rules and does not solicit expired registration", 
     .mockReturnValue(new Date("2026-11-08T12:00:00-05:00").getTime());
   renderRoute("/events");
   expect(screen.getByText("Past event / Archive")).toBeInTheDocument();
+  expect(screen.getByText("8:00 AM – 5:30 PM")).toBeInTheDocument();
   expect(
     screen.getByRole("link", { name: "View event details" }),
   ).toHaveAttribute("href", "https://www.robotcombatevents.com/events/7253");

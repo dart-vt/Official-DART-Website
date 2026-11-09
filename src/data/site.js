@@ -20,7 +20,7 @@ export const socialLinks = [
   { label: "Discord", url: "https://discord.gg/GY4mx3Eb" },
   {
     label: "GobblerConnect",
-    url: "https://vt.campuslabs.com/engage/organization/dart",
+    url: "https://gobblerconnect.vt.edu/dart/",
   },
   {
     label: "LinkedIn",

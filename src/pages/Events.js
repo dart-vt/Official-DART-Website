@@ -52,7 +52,7 @@ export function Events() {
                 <div>
                   <dt>Time</dt>
                   <dd>
-                    {event.begin} â€“ {event.end}
+                    {event.begin} – {event.end}
                   </dd>
                 </div>
                 <div>
@@ -65,7 +65,7 @@ export function Events() {
                 <div>
                   <dt>Registration window</dt>
                   <dd>
-                    {event.registration.start} â€“ {event.registration.end}
+                    {event.registration.start} – {event.registration.end}
                   </dd>
                 </div>
                 <div>
