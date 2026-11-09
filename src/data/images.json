@@ -207,26 +207,6 @@
       }
     ]
   },
-  "tiernan-bain": {
-    "width": 287,
-    "height": 270,
-    "variants": [
-      {
-        "src": "images/optimized/tiernan-bain-287.webp",
-        "width": 287
-      }
-    ]
-  },
-  "luke-hartman": {
-    "width": 282,
-    "height": 265,
-    "variants": [
-      {
-        "src": "images/optimized/luke-hartman-282.webp",
-        "width": 282
-      }
-    ]
-  },
   "timothy-fish": {
     "width": 389,
     "height": 367,
@@ -241,75 +221,61 @@
       }
     ]
   },
-  "edison-melendez": {
-    "width": 640,
-    "height": 603,
+  "samartha-madhyastha": {
+    "width": 160,
+    "height": 150,
     "variants": [
       {
-        "src": "images/optimized/edison-melendez-360.webp",
-        "width": 360
-      },
-      {
-        "src": "images/optimized/edison-melendez-640.webp",
-        "width": 640
+        "src": "images/optimized/samartha-madhyastha-160.webp",
+        "width": 160
       }
     ]
   },
-  "hanru-li": {
-    "width": 1228,
-    "height": 1159,
+  "alex-catalano": {
+    "width": 1254,
+    "height": 1254,
     "variants": [
       {
-        "src": "images/optimized/hanru-li-360.webp",
+        "src": "images/optimized/alex-catalano-360.webp",
         "width": 360
       },
       {
-        "src": "images/optimized/hanru-li-720.webp",
+        "src": "images/optimized/alex-catalano-720.webp",
         "width": 720
       }
     ]
   },
-  "eric-louis-bagtas": {
-    "width": 320,
-    "height": 302,
+  "anna-ngo": {
+    "width": 1254,
+    "height": 1254,
     "variants": [
       {
-        "src": "images/optimized/eric-louis-bagtas-320.webp",
-        "width": 320
-      }
-    ]
-  },
-  "britny-jiang": {
-    "width": 640,
-    "height": 603,
-    "variants": [
-      {
-        "src": "images/optimized/britny-jiang-360.webp",
+        "src": "images/optimized/anna-ngo-360.webp",
         "width": 360
       },
       {
-        "src": "images/optimized/britny-jiang-640.webp",
-        "width": 640
+        "src": "images/optimized/anna-ngo-720.webp",
+        "width": 720
       }
     ]
   },
-  "justin-burns": {
-    "width": 1587,
-    "height": 1497,
+  "antuhan-escalera-elias": {
+    "width": 1254,
+    "height": 1254,
     "variants": [
       {
-        "src": "images/optimized/justin-burns-360.webp",
+        "src": "images/optimized/antuhan-escalera-elias-360.webp",
         "width": 360
       },
       {
-        "src": "images/optimized/justin-burns-720.webp",
+        "src": "images/optimized/antuhan-escalera-elias-720.webp",
         "width": 720
       }
     ]
   },
   "aron-mulugeta": {
-    "width": 800,
-    "height": 800,
+    "width": 1254,
+    "height": 1254,
     "variants": [
       {
         "src": "images/optimized/aron-mulugeta-360.webp",
@@ -321,13 +287,255 @@
       }
     ]
   },
-  "samartha-madhyastha": {
-    "width": 160,
-    "height": 150,
+  "brandon-melendez": {
+    "width": 1254,
+    "height": 1254,
     "variants": [
       {
-        "src": "images/optimized/samartha-madhyastha-160.webp",
-        "width": 160
+        "src": "images/optimized/brandon-melendez-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/brandon-melendez-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "britny-jiang": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/britny-jiang-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/britny-jiang-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "cade-reading": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/cade-reading-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/cade-reading-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "declan-blankenship": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/declan-blankenship-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/declan-blankenship-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "edison-melendez": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/edison-melendez-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/edison-melendez-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "eric-louis-bagtas": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/eric-louis-bagtas-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/eric-louis-bagtas-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "hanru-li": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/hanru-li-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/hanru-li-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "jared-jessup": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/jared-jessup-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/jared-jessup-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "justin-burns": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/justin-burns-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/justin-burns-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "lucas-haskins": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/lucas-haskins-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/lucas-haskins-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "luke-hartman": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/luke-hartman-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/luke-hartman-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "max-aulino": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/max-aulino-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/max-aulino-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "min-hein": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/min-hein-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/min-hein-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "nickolas-cowen": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/nickolas-cowen-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/nickolas-cowen-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "owen-gray": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/owen-gray-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/owen-gray-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "tiernan-bain": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/tiernan-bain-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/tiernan-bain-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "william-pierce": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/william-pierce-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/william-pierce-720.webp",
+        "width": 720
+      }
+    ]
+  },
+  "willy-wriggers": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "src": "images/optimized/willy-wriggers-360.webp",
+        "width": 360
+      },
+      {
+        "src": "images/optimized/willy-wriggers-720.webp",
+        "width": 720
       }
     ]
   }

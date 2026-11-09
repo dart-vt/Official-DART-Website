@@ -50,7 +50,10 @@ export function Team() {
         ))}
         <section className="team-section">
           <div className="team-section-title">
-            <p className="eyebrow">06 / Always part of DART</p>
+            <p className="eyebrow">
+              {String(teamGroups.length + 1).padStart(2, "0")} / Always part of
+              DART
+            </p>
             <h2>Alumni</h2>
           </div>
           {alumni.map(({ year, columns }) => (

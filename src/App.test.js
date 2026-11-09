@@ -170,8 +170,12 @@ test("six robots, retained member groups, and no placeholder profile links", () 
   renderRoute("/team");
   expect(screen.getByRole("heading", { name: "Alumni" })).toBeInTheDocument();
   expect(
-    screen.getByRole("heading", { name: "Special thanks" }),
+    screen.getByRole("heading", { name: "Team members" }),
   ).toBeInTheDocument();
+  expect(
+    screen.getByRole("heading", { name: "Willy Wriggers" }),
+  ).toBeInTheDocument();
+  expect(screen.getByText("Trevor Ierardi")).toBeInTheDocument();
   screen
     .getAllByRole("link")
     .forEach((link) => expect(link).not.toHaveAttribute("href", "#"));
