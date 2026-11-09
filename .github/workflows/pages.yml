@@ -1,7 +1,8 @@
 name: Deploy to GitHub Pages
 on:
   push:
-    branches: [ main ]
+    branches: [ main, feature/modern-refresh ]
+  workflow_dispatch:
 
 permissions:
   contents: read
