@@ -201,7 +201,11 @@ Following inspection of `https://www.vtcro.org/` and `https://www.vtcro.org/team
    - Verified 167 asset references in `scripts/verify-assets.js`.
    - Committed in `d96e5c6`.
 
-8. **Validation & Testing**:
+8. **Google Tag Manager Installation**:
+   - Added container tag `GTM-P2ZP4BPZ` immediately after `<head>` in `public/index.html`.
+   - Committed in `918abcf` and verified live on GitHub Pages.
+
+9. **Validation & Testing**:
    - ESLint: PASS, 0 warnings.
    - Jest Test Suite: PASS, 16/16 tests passing.
    - Asset Verification: PASS, 167 checks passing.
