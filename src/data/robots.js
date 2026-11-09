@@ -13,6 +13,7 @@ export const robotList = [
     name: "Pinhead Larry",
     photo: "pinhead",
     type: "Weapon type: Spinner",
+    weightClass: "3lb Beetleweight",
     image: "/images/pickl.png",
     description:
       "Robust spinner robot engineered for precision control and endurance battles.",
@@ -29,6 +30,7 @@ export const robotList = [
     name: "Be Careful",
     photo: "be-careful",
     type: "Weapon type: Saw",
+    weightClass: "3lb Beetleweight",
     image: "/images/saww.png",
     description:
       "Overhead saw bot with a vertical cutting blade built for precise top-down attacks.",
@@ -37,6 +39,7 @@ export const robotList = [
     name: "Refuse",
     photo: "refuse",
     type: "Weapon type: Spinner",
+    weightClass: "1lb Antweight",
     image: "/images/Q70A1644.png",
     description:
       "Low-profile circular spinner designed for quick flips and agile movement.",
@@ -45,6 +48,7 @@ export const robotList = [
     name: "Goaline",
     photo: "goaline",
     type: "Weapon type: Spinner",
+    weightClass: "1lb Antweight",
     image: "/images/goal.png",
     description:
       "Triangular wedge spinner built for strong frontal impacts and durability.",
@@ -53,6 +57,7 @@ export const robotList = [
     name: "Pickle Jar",
     photo: "pickle-jar",
     type: "Weapon type: Spikes",
+    weightClass: "3lb Beetleweight",
     image: "/images/Q70A1683.png",
     description:
       "Compact drum-style spinner with a heavy rotating shell for wide strikes.",
@@ -61,6 +66,7 @@ export const robotList = [
     name: "CyclicalSubversion",
     photo: "cyclical-subversion",
     type: "Weapon type: Ramp",
+    weightClass: "1lb Antweight",
     image: "/images/PXL_20251004_170732141.PORTRAIT (1).png",
     description:
       "Ramp designed for controlled lifting, pushing, and disruption.",

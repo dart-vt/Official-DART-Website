@@ -6,6 +6,8 @@ import {
   Recruitment,
   SectionHeading,
 } from "../components/UI";
+import { AwardCard } from "../components/Cards";
+import { awards } from "../data/site";
 
 const disciplines = [
   [
@@ -106,6 +108,19 @@ export function About() {
               <h3>{title}</h3>
               <p>{description}</p>
             </article>
+          ))}
+        </div>
+      </section>
+      <section className="section container">
+        <SectionHeading
+          eyebrow="Battle honors"
+          title="Proven in the arena."
+        >
+          Recent tournament placements on record with the Competitive Robotics Organization.
+        </SectionHeading>
+        <div className="awards-grid">
+          {awards.map((award) => (
+            <AwardCard key={`${award.event}-${award.year}`} award={award} />
           ))}
         </div>
       </section>

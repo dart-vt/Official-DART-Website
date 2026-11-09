@@ -20,10 +20,11 @@ export function Land() {
       <section className="hero">
         <div className="hero-grid container">
           <div className="hero-copy">
-            <p className="eyebrow">
+            <div className="hero-badge-row">
               <span className="status-dot" />
-              Virginia Tech / Combat Robotics
-            </p>
+              <span className="eyebrow">Virginia Tech / Combat Robotics</span>
+              <span className="org-pill">VT CRO // DRT</span>
+            </div>
             <h1>
               BUILT TO <br />
               TAKE A <span>HIT.</span>

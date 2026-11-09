@@ -5,7 +5,29 @@ export const site = {
   sponsorEmail: "DARTvtech@gmail.com",
   cro: "https://www.vtcro.org/",
   croDart: "https://www.vtcro.org/teams/crodart",
+  croMetadata: {
+    code: "DRT",
+    type: "Design Team",
+    division: "Combat Robotics",
+    parentOrg: "Virginia Tech Competitive Robotics Organization",
+    classes: "1lb Antweight & 3lb Beetleweight",
+  },
 };
+
+export const awards = [
+  {
+    place: "3rd Place",
+    division: "College Antweight Division",
+    event: "Mixxer Makerspace",
+    year: "2026",
+  },
+  {
+    place: "3rd & 4th Place",
+    division: "Royal Rumble",
+    event: "Charlotte Royal Rumble · Charlotte",
+    year: "2025",
+  },
+];
 
 export const navigation = [
   { to: "/about", label: "About" },

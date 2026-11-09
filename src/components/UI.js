@@ -109,12 +109,13 @@ export function Affiliation({ compact = false }) {
         ↗
       </span>
       <div>
-        <p className="eyebrow">Part of something bigger</p>
+        <div className="affiliation-badge-row">
+          <p className="eyebrow">Part of something bigger</p>
+          <span className="org-pill">VT CRO // DESIGN TEAM · DRT</span>
+        </div>
         <p>
-          DART is represented as <a href={site.croDart}>CroDart</a> within the{" "}
-          <a href={site.cro}>
-            Competitive Robotics Organization at Virginia Tech.
-          </a>
+          DART is represented as <a href={site.croDart}>CroDart</a> within{" "}
+          <a href={site.cro}>VT CRO</a> (Competitive Robotics Organization at Virginia Tech).
         </p>
       </div>
     </div>

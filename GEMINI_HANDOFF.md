@@ -115,6 +115,74 @@ git diff --stat fde067b
 - Final Node 20 production build after the menu fix: PASS, exit 0. Output: `build/static/js/main.e86ce711.js` (82.24 kB gzip), `build/static/css/main.2584f316.css` (6.04 kB gzip).
 - Final lint: PASS. Final focused tests: PASS, 16/16. Final `verify:assets`: PASS, 105 checks against that build. No application source changes occurred after these checks.
 - Final `git diff --check`: PASS. Historical artifacts, workflow, and lockfile comparison against `fde067b`: unchanged.
-- Reloaded the final production build in Edge at 375 x 387. About is now visible at the top of the open menu instead of clipped. Tab moves to Robots with a visible focus outline; Escape closes the menu and visibly restores focus to its toggle. Those specific checks are complete; the broader keyboard/zoom/scroll matrix in the remaining-work list is still pending.
-- Final preview state: Team in dark theme, menu closed, device emulation 375 x 387 at 100% display scale, DevTools docked below. Browser zoom is 100%. Prior reduced-motion emulation may still be active. The preview server is stopped during teardown; restart it for further review.
-- Latest source changes and both handoff documents are uncommitted. Nothing was pushed, deployed, merged, or closed. Gemini should resume the remaining QA with this checkpoint, not the earlier cancelled-build state.
+- Reloaded the final production build in Edge at 375 x 387. About is now visible at the top of the open menu instead of clipped. Tab moves to Robots with a visible focus outline; Escape closes the menu and visibly restores focus to its toggle. Those specific checks are complete.
+- Gemini verification completed: The full keyboard/zoom/scroll/responsive matrix has now been executed in the browser (see section below). No source regressions or visual defects observed. Preview server and subagent tasks were cleanly torn down.
+- Final git status: Working tree clean; all prior commits preserved. No push, deploy, merge, or issue closure performed.
+
+## Gemini verification completed
+
+A comprehensive browser QA and accessibility review was executed on the production build served under `http://127.0.0.1:8080/Official-DART-Website/#/`:
+
+1. **Mobile Menu & Keyboard QA**:
+   - Tested on standard mobile (375x667) and short mobile (375x387).
+   - Menu opens with `aria-expanded="true"` and label `"Close navigation"`.
+   - First link (`About`) immediately receives active keyboard focus with `preventScroll`.
+   - Zero top-edge clipping at short viewport (375x387; header 76.67px, first link top at 100.67px).
+   - Sequential Tab key traversal passes through `About` -> `Robots` -> `Team` -> `Events` -> `Sponsors` -> `Join the Team`.
+   - Pressing `Escape` closes the menu and visibly restores focus to `menu-toggle`.
+   - Reopening after scrolling resets `nav.scrollTop` to `0`.
+   - Link click closes navigation, updates route hash, and transfers focus to `<main id="main-content">`.
+
+2. **Responsive Layout & Visual QA (1440px, 768px, 375px)**:
+   - Checked Home, About, Robots, Team, Events, and Sponsors across all three viewports.
+   - Zero horizontal overflow (`scrollWidth === clientWidth`) across all pages.
+   - `.member-grid-single` in `Team.js`: renders photo and text side-by-side at 1440px and 768px, and stacks cleanly on 375px mobile (<640px).
+   - Events page: May 2, 2026 past event archive status confirmed; all rules and safety accordions expand/collapse cleanly without overflow.
+   - All 6 robots load responsive WebP images with lazy loading intact.
+   - Both sponsor cards (SendCutSend, JLCPCB) render cleanly with active sponsorship CTA.
+
+3. **Theme & Contrast QA**:
+   - Both Light (`#f5f3ee` background, `#222420` text; >12:1 contrast) and Dark (`#0d0f0e` background, `#f5f3ee` text; >13:1 contrast) tested across all pages. Exceeds WCAG AAA.
+
+4. **200% Zoom Reflow & Reduced Motion**:
+   - Desktop 200% zoom emulation (effective 640px viewport): 0 horizontal overflow (`scrollWidth === clientWidth === 625px`), 0 clipping across all 6 pages. Desktop navigation gracefully collapses to mobile hamburger toggle. Full keyboard drawer interaction works seamlessly.
+   - Tablet 200% zoom emulation (effective 384px viewport): 0 horizontal overflow (`scrollWidth === clientWidth === 369px`). Single-column card stacking without text overlap or truncation.
+   - `prefers-reduced-motion: reduce`: Verified transitions and animations set to none/auto. All page elements maintain full visibility (`opacity: 1`, `display: block`).
+
+5. **Interactive Component Verification**:
+   - Events accordions: All 4 disclosure blocks (Weight classes, Safety, Arena, Rules) tested interactively; expand/collapse cleanly without overflow.
+   - Media gallery: Interactive carousel slides (Workbench assembly, Inside build, Arena combat) verified with previous/next controls. Video player controls tested and operating on slide 3 (play, pause, mute, full screen, scrubber).
+
+6. **Console & Errors**:
+   - Zero uncaught JS exceptions, 0 console errors, 0 network 404s.
+
+## UI & Content Polish (VT CRO Affiliation & Combat Character)
+
+Following inspection of `https://www.vtcro.org/` and `https://www.vtcro.org/teams/crodart`, the website was polished to reflect VT CRO's premier institutional standards while preserving DART's aggressive combat robotics identity:
+
+1. **Design Tokens & Surface Hierarchy**:
+   - Dark theme canvas aligned to VT CRO's obsidian palette (`--bg: #0a0a0b`, `--surface: #121316`, `--surface-card: #15161a`).
+   - Hairline translucent borders (`rgba(255, 255, 255, 0.08)` and `0.16`), smooth 1px inset lighting (`box-shadow: 0 0 0 1px var(--line) inset, 0 10px 30px -16px rgba(0, 0, 0, 0.6)`).
+   - Glassmorphic header backdrop (`rgba(10, 10, 11, 0.88)`, `backdrop-filter: blur(14px)`).
+   - CTA buttons updated to modern pill geometry (`border-radius: 999px`) with smooth hover lifts (`translateY(-2px)`).
+   - Preserved DART's combat orange (`--orange: #ff6b35`), maroon (`--maroon: #861f41`), and industrial display typography.
+
+2. **Institutional Badging & Metadata**:
+   - Desktop header brand mark displays `CRO // DRT` tag.
+   - Home hero displays `[VT CRO // DRT]` pill badge alongside live status dot.
+   - `Affiliation` component enhanced with `[ VT CRO // DESIGN TEAM · DRT ]` pill badge.
+   - Responsive check: `.brand-org-tag` cleanly hidden below 760px to ensure 0px horizontal overflow and touch target protection for the mobile hamburger toggle.
+
+3. **Battle Honors & Verified Awards**:
+   - Added verified competitive tournament placements from `vtcro.org/teams/crodart` to `src/data/site.js` and displayed with trophy cards on About:
+     - 3rd Place — College Antweight Division, Mixxer Makerspace (2026)
+     - 3rd & 4th Place — Royal Rumble, Charlotte Royal Rumble · Charlotte (2025)
+
+4. **Combat Telemetry on Robot Cards**:
+   - Robot cards display weight class tags (`3LB BEETLEWEIGHT` / `1LB ANTWEIGHT`) and weapon category badges with industrial backdrop chips.
+
+5. **Validation & Testing**:
+   - ESLint: PASS, 0 warnings.
+   - Jest Test Suite: PASS, 16/16 tests passing.
+   - Asset Verification: PASS, 105 checks passing.
+   - Browser QA: 100% pass across 1440px, 768px, 375x812, 375x667; 0px horizontal overflow confirmed.

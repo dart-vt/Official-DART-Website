@@ -15,10 +15,17 @@ export function RobotCard({ robot, index, headingLevel = 3 }) {
         <span className="robot-number" aria-hidden="true">
           D / {String(index + 1).padStart(2, "0")}
         </span>
+        {robot.weightClass && (
+          <span className="robot-class-badge" aria-hidden="true">
+            {robot.weightClass.toUpperCase()}
+          </span>
+        )}
       </div>
       <div className="robot-caption">
         <div>
-          <p className="eyebrow">{robot.type.replace("Weapon type: ", "")}</p>
+          <div className="robot-meta-row">
+            <p className="eyebrow">{robot.type.replace("Weapon type: ", "")}</p>
+          </div>
           <Heading>{robot.name}</Heading>
         </div>
         <span className="crosshair" aria-hidden="true">
@@ -26,6 +33,26 @@ export function RobotCard({ robot, index, headingLevel = 3 }) {
         </span>
       </div>
     </article>
+  );
+}
+
+export function AwardCard({ award }) {
+  return (
+    <div className="award-card">
+      <div className="award-trophy" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+          <path d="M6 9H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3m12 6h3a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-3M6 3h12v7a6 6 0 0 1-12 0V3Zm4 15v3m4-3v3m-7 0h10" />
+        </svg>
+      </div>
+      <div className="award-details">
+        <div className="award-header">
+          <strong className="award-place">{award.place}</strong>
+          <span className="award-year">{award.year}</span>
+        </div>
+        <p className="award-division">{award.division}</p>
+        <p className="award-event">{award.event}</p>
+      </div>
+    </div>
   );
 }
 
