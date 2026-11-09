@@ -191,8 +191,19 @@ Following inspection of `https://www.vtcro.org/` and `https://www.vtcro.org/team
    - On hover, transitions to LinkedIn brand blue (`#0a66c2` / `rgb(10, 102, 194)`) with matching border, subtle brand-tinted background, and a `translateY(-2px)` lift.
    - Reduced motion supported: hover transforms neutralized under `@media (prefers-reduced-motion: reduce)`.
 
-7. **Validation & Testing**:
+7. **Team Roster Alignment, Willy Wriggers Leadership & DRT Acronym Restoration**:
+   - Aligned active team roster with VT CRO CroDart (`https://www.vtcro.org/teams/crodart`).
+   - Willy Wriggers designated as Head of DART (`teamLeadership`) with contact details (`wewriggers@vt.edu`, LinkedIn).
+   - 21 active members imported with high-res portraits, engineering majors, graduation years, VT emails, and verified personal LinkedIn links.
+   - Trevor Ierardi preserved in Alumni and Founders records.
+   - Code acronym restored back to `DRT` (`CRO // DRT`, `VT CRO // DRT`, `VT CRO // DESIGN TEAM · DRT`, `code: "DRT"`).
+   - Generated 360px and 720px responsive WebP derivatives for all members.
+   - Verified 167 asset references in `scripts/verify-assets.js`.
+   - Committed in `d96e5c6`.
+
+8. **Validation & Testing**:
    - ESLint: PASS, 0 warnings.
    - Jest Test Suite: PASS, 16/16 tests passing.
-   - Asset Verification: PASS, 105 checks passing.
+   - Asset Verification: PASS, 167 checks passing.
+   - Production Build: PASS.
    - Browser QA: 100% pass across 1440px, 768px, 375x812, 375x667; 0px horizontal overflow confirmed.
